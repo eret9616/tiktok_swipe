@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="guide-section">
+      <div class="animation-border">
+        <div class="animation-container">
+          <img src="triangle.png" alt="Triangle" class="triangle triangle-1" />
+          <img src="triangle.png" alt="Triangle" class="triangle triangle-2" />
+        </div>
+      </div>
+      <img src="hand.png" alt="Hand" class="hand" />
+    </div>
+  </body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .guide-section {
+      border: 2px solid blue;
+      width: 120px;
+      position: relative;
+    }
+    .animation-border {
+      box-sizing: border-box;
+      border-radius: 20px;
+      position: relative;
+      width: 120px; /* 根据你的需求调整 */
+      height: 220px; /* 根据你的需求调整 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+    }
+    .animation-container {
+      overflow: hidden;
+      box-sizing: border-box;
+      background: #dddddd;
+      border-radius: 15px;
+      position: relative;
+      width: 107px; /* 根据你的需求调整 */
+      height: 208px;
+    }
+
+    .triangle {
+      position: absolute;
+      top: 50%; /* 调整位置 */
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    .triangle-1 {
+      animation: triangle1Move 2.4s infinite;
+    }
+    .triangle-2 {
+      animation: triangle2Move 2.4s infinite;
+    }
+
+    .hand {
+      /* left: 35%; */
+      position: absolute;
+      left: 55%;
+      top: 61%;
+      animation: handMove 2.4s infinite;
+    }
+
+    @keyframes triangle1Move {
+      0% {
+        transform: translateX(-50%) translateY(-50%);
+      }
+      100% {
+        transform: translateX(-50%) translateY(-200px);
+      }
+    }
+
+    @keyframes triangle2Move {
+      0% {
+        transform: translateX(-50%) translateY(200px);
+      }
+      100% {
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    @keyframes handMove {
+      0% {
+        transform: translateX(0%) translateY(0);
+      }
+      50% {
+        transform: translateX(0%) translateY(-70px);
+        rotate: 15deg;
+      }
+      100% {
+        transform: translateX(0%) translateY(0);
+      }
+    }
+  </style>
+</html>

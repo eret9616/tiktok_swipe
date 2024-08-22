@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    @keyframes leftLineMove {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-600px);
+      }
+    }
+    @keyframes rightLineMove {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(600px);
+      }
+    }
+
+    .line-box {
+      width: 400px;
+      position: relative;
+      height: 2px;
+
+      .line-left {
+        position: absolute;
+        width: 200px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+      }
+
+      .line-left::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 80%, rgba(255, 255, 255, 0) 100%);
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 400px;
+        left: 200px;
+        top: 0;
+        animation: leftLineMove 1.8s infinite;
+      }
+
+      .line-right {
+        position: absolute;
+        width: 200px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+      }
+
+      .line-right::after {
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 80%, rgba(255, 255, 255, 0) 100%);
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 400px;
+        right: 200px;
+        top: 0;
+        animation: rightLineMove 1.8s infinite;
+      }
+    }
+  </style>
+</head>
+<body style="background: red; padding-top: 200px; padding-left: 200px">
+  <div class="line-box">
+    <div class="line-left"></div>
+    <div class="line-right"></div>
+  </div>
+</body>
+</html>
